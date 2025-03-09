@@ -26,7 +26,7 @@ services:
       - PGADMIN_DEFAULT_EMAIL=alumno@google.com
       - PGADMIN_DEFAULT_PASSWORD=123456
     volumes:
-      - ./pgadmin:/var/lib/pgadmin
-      - ./pgadmin:/certs/server.cert
-      - ./pgadmin:/certs/server.key
-      - ./pgadmin:/pgadmin4/servers.json
+      - ./pgadmin/data:/var/lib/pgadmin        # Carpeta para los datos de pgAdmin
+      - ./pgadmin/certs/server.cert:/certs/server.cert  # Certificados
+      - ./pgadmin/certs/server.key:/certs/server.key    # Llave privada
+      - ./pgadmin/servers.json:/pgadmin4/servers.json   # Configuración de servidores
